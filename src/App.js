@@ -30,7 +30,7 @@ class App extends Component {
       let deg = 360.0/petal_nums
       let red = ( deg * Math.PI / 180.0)
       // 要調整
-      let circle_r = 72 * 2.5;
+      let circle_r = 52 * 2.5;
 
       for (let i=0; i < petal_nums ; i++) {
         // 花びらの位置を決定
@@ -77,13 +77,13 @@ class App extends Component {
           {/* buttonをコンポーネントに */}
           <button className="button" onClick={this.start_game}>start</button>
           {/* circleをコンポーネントに */}
+          {this.state.display_flg ? <Like like_flg={this.state.like_flg} /> : ''}
           <div className="main-contents">
             <div className="circle-box">
               <div className="circle"></div>
               <Petals petals={this.state.petals} vanish={this.vanish}/>
             </div>
           </div>
-          {this.state.display_flg ? <Like like_flg={this.state.like_flg} /> : ''}
         </div>
       </div>
     );
