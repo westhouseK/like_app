@@ -3,10 +3,11 @@ import React, { Component } from 'react'
 class Like extends Component {
 
   render() {
+    const like_flg = this.props.like_flg
     return (
-      <div>
-        LIKE
-      </div>
+      <h2>
+        { like_flg ? 'スキ' : 'キライ'}
+      </h2>
     )
   }
 }

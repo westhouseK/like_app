@@ -8,19 +8,23 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      petals: [],
-      display_flg: false,
+      petals      : [],
+      display_flg : false,
+      like_flg    : false
     }
   }
 
   start_game = async() => {
 
+    // 初期化処理
     const init = () => {
       this.setState({
-        petals: [],
+        petals      : [],
+        display_flg : false
       })
     }
 
+    // 花びらを生成
     const get_style = () => {
       let petal_nums = this.get_random_int(10, 6)
       let deg = 360.0/petal_nums
@@ -53,6 +57,15 @@ class App extends Component {
     return Math.floor( Math.random() * (max + 1 - min) ) + min
   }
 
+  vanish = (e) => {
+    e.preventDefault()
+    e.target.style.display = "none";
+    this.setState({
+      display_flg : true,
+      like_flg    : !this.state.like_flg
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -63,10 +76,10 @@ class App extends Component {
           <div className="main-contents">
             <div className="circle-box">
               <div className="circle"></div>
-              <Petals petals={this.state.petals}/>
+              <Petals petals={this.state.petals} vanish={this.vanish}/>
             </div>
           </div>
-          {this.state.display_flg ? <Like /> : ''}
+          {this.state.display_flg ? <Like like_flg={this.state.like_flg} /> : ''}
         </header>
       </div>
     );
