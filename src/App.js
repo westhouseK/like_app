@@ -69,7 +69,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="App-content">
+          <div　className='header'>
+            <div className='title'>花占い</div>
+            <div className='sub-title'>(create by @westhouse_k)</div>
+          </div>
           {/* buttonをコンポーネントに */}
           <button className="button" onClick={this.start_game}>start</button>
           {/* circleをコンポーネントに */}
@@ -80,7 +84,7 @@ class App extends Component {
             </div>
           </div>
           {this.state.display_flg ? <Like like_flg={this.state.like_flg} /> : ''}
-        </header>
+        </div>
       </div>
     );
   }

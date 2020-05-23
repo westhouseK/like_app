@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 class Petals extends Component {
 
-  
   render() {
     let petals = this.props.petals
     if (petals === undefined) return (<div></div>);

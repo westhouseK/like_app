@@ -5,9 +5,9 @@ class Like extends Component {
   render() {
     const like_flg = this.props.like_flg
     return (
-      <h2>
+      <div className='like'>
         { like_flg ? 'スキ' : 'キライ'}
-      </h2>
+      </div>
     )
   }
 }
