@@ -1,0 +1,59 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
+  <style>
+    .main-contents {
+      position: relative;
+      width: 100%;
+    }
+    .circle-box {
+      position: relative;
+      margin: 0 auto;
+    }
+    div.item {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border-radius: 50%;
+      background-color: #999;
+    }
+  </style>
+</head>
+<body>
+<section class="main-contents">
+    <section class="circle-box">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+     
+        
+    </section>
+</section>
+
+<script>
+  $(function(){
+      var item_num = $('div.item').length;
+      var deg = 360.0/item_num;
+      var red = (deg*Math.PI/180.0);
+      var circle_r = $("div.item").width() * 2.5;
+      $('div.item').each(function(i, elem) {
+          var x = Math.cos(red * i) * circle_r + circle_r;
+          console.log(x)
+          var y = Math.sin(red * i) * circle_r + circle_r;
+          console.log(y)
+          $(elem).css('left', x);
+          $(elem).css('top', y);
+      });
+  });
+</script>
+</body>
+</html>
