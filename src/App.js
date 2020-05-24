@@ -75,7 +75,7 @@ class App extends Component {
             <div className='sub-title'>(created by @westhouse_k)</div>
           </div>
           {/* buttonをコンポーネントに */}
-          <button className="button" onClick={this.start_game}>start</button>
+          <button className="button" onClick={this.start_game}>START</button>
           {/* circleをコンポーネントに */}
           {this.state.display_flg ? <Like like_flg={this.state.like_flg} /> : ''}
           <div className="main-contents">
