@@ -26,7 +26,7 @@ class App extends Component {
 
     // 花びらを生成
     const get_style = () => {
-      let petal_nums = this.get_random_int(10, 6)
+      let petal_nums = this.get_random_int(11, 6)
       let deg = 360.0/petal_nums
       let red = ( deg * Math.PI / 180.0)
       // 要調整
@@ -72,7 +72,7 @@ class App extends Component {
         <div className="App-content">
           <div　className='header'>
             <div className='title'>花占い</div>
-            <div className='sub-title'>(create by @westhouse_k)</div>
+            <div className='sub-title'>(created by @westhouse_k)</div>
           </div>
           {/* buttonをコンポーネントに */}
           <button className="button" onClick={this.start_game}>start</button>
