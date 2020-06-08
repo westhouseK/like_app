@@ -72,7 +72,6 @@ class App extends Component {
         <div className="App-content">
           <div　className='header'>
             <div className='title'>花占い</div>
-            <div className='sub-title'>(created by @westhouse_k)</div>
           </div>
           {/* buttonをコンポーネントに */}
           <button className="button" onClick={this.start_game}>START</button>
